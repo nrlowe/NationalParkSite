@@ -25,15 +25,10 @@ public class JDBCParkDAO implements ParkDAO {
 	@Override
 	public List <Park> getAllParks() {
 		List<Park> allParks = new ArrayList<Park>();
-		String sqlSelectAllParks = "SELECT parkCode, parkName, state, parkDescription " + "FROM park ";
+		String sqlSelectAllParks = "SELECT * " + "FROM park ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllParks);
 		while(results.next()) {
-			Park park = new Park();
-			park.setParkCode(results.getString("parkCode"));
-			park.setParkName(results.getString("parkName"));
-			park.setParkLocation(results.getString("state"));
-			park.setDescription(results.getString("parkDescription"));
-			
+			Park park = mapRowToPark(results);			
 			allParks.add(park);
 		}
 		return allParks;
@@ -41,7 +36,31 @@ public class JDBCParkDAO implements ParkDAO {
 	
 	@Override
 	public Park getParkByParkCode(String parkCode) {
-		return null;
+		String sqlSelectAllParks = "SELECT * " + "FROM park " + "WHERE parkCode = ? ";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllParks, parkCode);
+		Park park = mapRowToPark(results);
+		return park;
+	}
+	
+	private Park mapRowToPark(SqlRowSet results) {
+		Park park = new Park();
+		park.setParkCode(results.getString("parkCode"));
+		park.setParkName(results.getString("parkName"));
+		park.setState(results.getString("state"));
+		park.setAcreage(results.getInt("parkDescription"));
+		park.setElevationInFeet(results.getDouble("elevationInFeet"));
+		park.setMilesOfTrail(results.getDouble("milesOfTrail"));
+		park.setNumberOfCampsites(results.getInt("numberOfCampsites"));
+		park.setClimate(results.getString("climate"));
+		park.setYearFounded(results.getInt("yearFounded"));
+		park.setAnnualVisitorCount(results.getInt("annualVisitorCount"));
+		park.setInspirationalQuote(results.getString("inspirationalQuote"));
+		park.setInspirationalQuoteSource(results.getString("inspirationalQuoteSource"));
+		park.setParkDescription(results.getString("parkDescription"));
+		park.setEntryFee(results.getInt("entryFee"));
+		park.setNumberOfAnimalSpecies(results.getInt("numberOfAnimalSpecies"));
+		
+		return park;
 	}
 
 }
