@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>National Park Geek</title>
-    <c:url value="/css/nationalParkGeek.css" var="cssHref" />
+    <c:url value="/CSS/CSS.css" var="cssHref" />
     <link rel="stylesheet" href="${cssHref}">
 </head>
 

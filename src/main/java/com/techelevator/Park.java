@@ -1,4 +1,4 @@
-package com.techelevator.npgeek;
+package com.techelevator;
 
 public class Park {
 	private String parkCode;
@@ -22,7 +22,7 @@ public class Park {
 		this.parkName = parkName;
 	}
 	
-	public String getDescripton() {
+	public String getDescription() {
 		return description;
 	}
 	

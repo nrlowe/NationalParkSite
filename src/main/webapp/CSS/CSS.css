@@ -1,0 +1,77 @@
+header > img {
+width: 50%;
+}
+
+ul {
+padding-left: 20px;
+}
+
+li {
+padding-top: 10px;
+padding-bottom: 10px;
+padding: 10px;
+display: inline;
+margin-right: 20px;
+font-size: 25px;
+}
+
+li a {
+color: white;
+text-decoration: none;
+vertical-align: middle;
+}
+
+nav {
+width: 100%;
+background-color: forestgreen;
+padding: 5px;
+}
+
+nav ul li {
+list-style: none;
+text-align: center;
+width: 200px;
+}
+
+li a:hover {
+text-decoration: underline;
+}
+
+div {
+display: inline;
+}
+
+.parkName {
+font-size: 25px;
+vertical-align: top;
+}
+
+.wordWrap {
+width: 60%;
+overflow-wrap: break-word;
+display: flex;
+vertical-align: top;
+
+}
+
+/* #landingImg {
+width: 300px;
+} */
+
+table {
+width:90%;
+margin: auto;
+}
+
+#img {
+width: 40%;
+padding: 20px;
+}
+
+#description {
+width: 40%;
+}
+
+
+
+
