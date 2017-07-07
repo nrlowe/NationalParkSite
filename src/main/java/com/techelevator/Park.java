@@ -4,7 +4,7 @@ public class Park {
 	private String parkCode;
 	private String parkName;
 	private String state;
-	private int acreage;
+	private float acreage;
 	private double elevationInFeet;
 	private double milesOfTrail;
 	private int numberOfCampsites;
@@ -25,11 +25,11 @@ public class Park {
 		this.state = state;
 	}
 
-	public int getAcreage() {
+	public float getAcreage() {
 		return acreage;
 	}
 
-	public void setAcreage(int acreage) {
+	public void setAcreage(float acreage) {
 		this.acreage = acreage;
 	}
 

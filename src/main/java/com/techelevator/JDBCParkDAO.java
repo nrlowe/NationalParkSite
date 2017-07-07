@@ -47,7 +47,7 @@ public class JDBCParkDAO implements ParkDAO {
 		park.setParkCode(results.getString("parkCode"));
 		park.setParkName(results.getString("parkName"));
 		park.setState(results.getString("state"));
-		park.setAcreage(results.getInt("parkDescription"));
+		park.setAcreage(results.getFloat("acreage"));
 		park.setElevationInFeet(results.getDouble("elevationInFeet"));
 		park.setMilesOfTrail(results.getDouble("milesOfTrail"));
 		park.setNumberOfCampsites(results.getInt("numberOfCampsites"));
