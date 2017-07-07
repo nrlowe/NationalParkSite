@@ -1,5 +1,8 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.activation.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,19 @@ public class JDBCWeatherDAO implements WeatherDAO {
 	public JDBCWeatherDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+	
+	@Override
+	public List<Weather> getWeatherByParkCode(String parkCode) {
+		List<Weather> weatherList = new ArrayList<Weather>();
+		String sqlSelectWeather = "SELECT * " + "FROM weather " + "WHERE parkCode=? ";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectWeather, parkCode);
+		while(results.next()) {
+			Weather weather = mapRowToWeather(results);			
+			weatherList.add(weather);
+		}
+		return weatherList;
+	}
+	
 	
 	
 	
@@ -36,6 +52,18 @@ public class JDBCWeatherDAO implements WeatherDAO {
 		weather.setForecast(row.getString("forecast"));
 		return weather;
 	}
+
+
+
+
+
+
+
+
+
+
+
+	
 	
 	
 
