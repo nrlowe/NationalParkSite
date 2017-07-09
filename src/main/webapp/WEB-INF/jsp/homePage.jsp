@@ -6,7 +6,7 @@
 <body>
 
 <c:forEach var="park" items="${parkList}">
-	<a href="parkDetail?parkCode=${park.parkCode.toLowerCase()}">
+	<a href="parkDetail?parkCode=${park.parkCode.toUpperCase()}">
 		<c:url var="imageLink" value="/img/parks/${park.parkCode.toLowerCase()}.jpg" />
 		<img src="${imageLink}"/></a>
 	<img src="${imgUrl}">
