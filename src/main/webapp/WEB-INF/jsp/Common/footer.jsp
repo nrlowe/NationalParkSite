@@ -1,3 +1,5 @@
-<p class="copyright">National Park Geek Inc 2015</p>
+
+<div class="copyright">National Park Geek Inc 2015</div>
+
 </body>
 </html>

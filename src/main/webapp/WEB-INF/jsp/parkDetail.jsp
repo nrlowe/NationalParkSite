@@ -3,22 +3,22 @@
 <c:import url="/WEB-INF/jsp/Common/header.jsp" />
 
 <body>
-<img src="img/parks/${ourPark.parkCode.toLowerCase()}.jpg"/>
-<p><c:out value="${ourPark.parkName}"/></p>
-<p><c:out value="${ourPark.state}"/></p>
-<p><c:out value="${ourPark.acreage}"/></p>
-<p><c:out value="${ourPark.elevationInFeet}"/></p>
-<p><c:out value="${ourPark.milesOfTrail}"/></p>
-<p><c:out value="${ourPark.numberOfCampsites}"/></p>
-<p><c:out value="${ourPark.climate}"/></p>
-<p><c:out value="${ourPark.yearFounded}"/></p>
-<p><c:out value="${ourPark.annualVisitorCount}"/></p>
-<p><c:out value="${ourPark.inspirationalQuote}"/></p>
-<p><c:out value="${ourPark.inspirationalQuoteSource}"/></p>
+<div class="parkDetail">
+<img class="homeParkImg" src="img/parks/${ourPark.parkCode.toLowerCase()}.jpg"/>
+<p><strong><c:out value="${ourPark.parkName}"/></strong></p>
+<p><c:out value="Location: ${ourPark.state}"/></p>
+<p><c:out value="Acreage: ${ourPark.acreage}"/></p>
+<p><c:out value="Elevation (ft): ${ourPark.elevationInFeet}"/></p>
+<p><c:out value="Miles of Trail: ${ourPark.milesOfTrail}"/></p>
+<p><c:out value="Number of Campsites: ${ourPark.numberOfCampsites}"/></p>
+<p><c:out value="Climate: ${ourPark.climate}"/></p>
+<p><c:out value="Year Founded: ${ourPark.yearFounded}"/></p>
+<p><c:out value="Annual Visitor Count: ${ourPark.annualVisitorCount}"/></p>
+<p><c:out value='Inspiration Quote: "${ourPark.inspirationalQuote}" -${ourPark.inspirationalQuoteSource}'/></p>
 <p><c:out value="${ourPark.parkDescription}"/></p>
-<p><c:out value="${ourPark.entryFee}"/></p>
-<p><c:out value="${ourPark.numberOfAnimalSpecies}"/></p>
-
+<p><c:out value="Entry Fee: $${ourPark.entryFee}"/></p>
+<p><c:out value="Number of Species: ${ourPark.numberOfAnimalSpecies}"/></p>
+</div>
 <div>
 	<form action="parkDetail" method=POST>
 		<c:set var="isCheckedonF" value="checked"/>

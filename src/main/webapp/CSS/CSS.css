@@ -71,6 +71,17 @@ padding: 20px;
 #description {
 width: 40%;
 }
+.homeParkImg {
+	float:left;
+	margin: 5px;
+}
+.homePage{
+	border-bottom: solid black 2px;
+	float: left;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
 
 
 
